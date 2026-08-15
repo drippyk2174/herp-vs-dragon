@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hero vs Dragon — Web Edition</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="game-wrap">
+    <header>
+      <h1>Hero vs Dragon</h1>
+      <p class="subtitle">A small browser remake of your terminal game — hero skill restored</p>
+    </header>
+
+    <section class="hud">
+      <div class="dragon-panel">
+        <pre id="dragon-art" class="dragon-art"></pre>
+      </div>
+
+      <div class="stats">
+        <div class="stat-row">
+          <label>Hero HP</label>
+          <div class="bar">
+            <div id="hero-hp-bar" class="bar-fill"></div>
+          </div>
+          <div id="hero-hp-text" class="stat-num"></div>
+        </div>
+
+        <div class="stat-row">
+          <label>Hero Mana</label>
+          <div class="bar">
+            <div id="hero-mana-bar" class="bar-fill mana"></div>
+          </div>
+          <div id="hero-mana-text" class="stat-num"></div>
+        </div>
+
+        <div class="stat-row">
+          <label>Hero Skill</label>
+          <div class="bar">
+            <div id="hero-skill-bar" class="bar-fill skill"></div>
+          </div>
+          <div id="hero-skill-text" class="stat-num"></div>
+        </div>
+
+        <div class="stat-row">
+          <label>Dragon HP</label>
+          <div class="bar">
+            <div id="dragon-hp-bar" class="bar-fill dragon"></div>
+          </div>
+          <div id="dragon-hp-text" class="stat-num"></div>
+        </div>
+
+        <div id="horde-row" class="horde-row hidden">
+          <label>Horde</label>
+          <div class="horde-info">
+            <div>👹 M1 <span id="m1-health">20</span>HP</div>
+            <div>👹 M2 <span id="m2-health">20</span>HP</div>
+            <div>👹 M3 <span id="m3-health">20</span>HP</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="controls">
+      <div class="target-select" id="target-select">
+        <label>Target</label>
+        <div class="targets">
+          <label><input type="radio" name="target" value="D" checked> 🔥 Dragon</label>
+          <label><input type="radio" name="target" value="1"> 👹 Monster 1</label>
+          <label><input type="radio" name="target" value="2"> 👹 Monster 2</label>
+          <label><input type="radio" name="target" value="3"> 👹 Monster 3</label>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button data-action="attack" class="action-btn">⚔️ Attack</button>
+        <button data-action="shield" class="action-btn">🛡️ Shield (+10 Mana)</button>
+        <button data-action="counter" class="action-btn">⚡ Counter-Strike</button>
+        <button data-action="ultimate" class="action-btn">🌟 Ultimate</button>
+        <button data-action="fireball" class="action-btn">🔥 Fire Ball</button>
+      </div>
+
+      <div class="cheats">
+        <button id="cheat-maxhp">❤️ CHEAT: Full HP</button>
+        <button id="cheat-instantkill">⚡ CHEAT: Kill All</button>
+        <button id="restart">🔁 Restart</button>
+      </div>
+    </section>
+
+    <section class="log-wrap">
+      <h2>Combat Log</h2>
+      <div id="log" class="log"></div>
+    </section>
+
+    <div id="overlay" class="overlay hidden">
+      <div id="overlay-box" class="overlay-box"></div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
